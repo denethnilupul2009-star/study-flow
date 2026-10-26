@@ -1,0 +1,46 @@
+{
+  "name": "studyflow-study-kit",
+  "version": "1.0.0",
+  "description": "StudyFlow Study Kit desktop app",
+  "main": "main.js",
+  "author": "StudyFlow",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win nsis"
+  },
+  "devDependencies": {
+    "electron": "^35.0.0",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "com.studyflow.studykit",
+    "productName": "StudyFlow Study Kit",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "index.html",
+      "README.txt",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "nsis": {
+      "oneClick": true,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    }
+  }
+}
